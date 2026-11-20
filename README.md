@@ -1,6 +1,17 @@
-# [App-Name]
+# Vererbung
 
-> Kurze Beschreibung der Applikation – Was macht sie? Für wen ist sie gedacht?
+Erstelle ein Basisklasse Person, von welcher die Klasse Employee abgeleitet werden soll.
+
+
+Die Klasseneigenschaften und Methoden entnimm dem
+Klassendiagramm.
+
+Es sollen sämtliche Methoden ausprogrammiert werden.
+Erweitere die Mitarbeiter (Employee) Klasse um die Eigen-
+schaften: - SupervisorID, - Salary
+und die Methoden: set/get für beides und eine Methode
+salaryIncrease(float). 
+
 
 ---
 
