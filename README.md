@@ -1,121 +1,89 @@
 # Vererbung
 
-Erstelle ein Basisklasse Person, von welcher die Klasse Employee abgeleitet werden soll.
+Java-Konsolenanwendung für den ITL-Unterricht, die Vererbung am Beispiel
+der Basisklasse `Person` und der abgeleiteten Klasse `Employee` zeigt.
 
+## Screenshot
 
-Die Klasseneigenschaften und Methoden entnimm dem
-Klassendiagramm.
+![Konsolenausgabe der Java-Anwendung](./media/image.png)
 
-Es sollen sämtliche Methoden ausprogrammiert werden.
-Erweitere die Mitarbeiter (Employee) Klasse um die Eigen-
-schaften: - SupervisorID, - Salary
-und die Methoden: set/get für beides und eine Methode
-salaryIncrease(float). 
+## Features
 
+- Erstellt ein `Employee`-Objekt und verwendet die von `Person` geerbten Eigenschaften.
+- Verwaltet die Mitarbeiter-ID (`employeeId`), die Vorgesetzten-ID (`supervisorId`) und das Gehalt (`salary`).
+- Liest und ändert die Vorgesetzten-ID und das Gehalt über Getter und Setter.
+- Erhöht das Gehalt über die Methode `salaryIncrease(float)`.
+- Gibt die Personendaten und die zusätzlichen Mitarbeiterdaten auf der Konsole aus.
 
----
+## Voraussetzungen
 
-## 📋 Projektinformationen
+- JDK 25 oder neuer mit den Befehlen `javac` und `java`
+- Git, falls das Repository geklont wird
 
-| Feld              | Inhalt                          |
-|-------------------|---------------------------------|
-| **Projektname**   | Vererbung                   |
-| **Klasse**        | 2aAPC                  |
-| **Schuljahr**     | 2026/27                |
-| **Abgabedatum**   | 20.11.2026                   |
-| **Autor/in**      | Auer Alexander             |
-| **Lehrer/in**     | Gerhard Jarz            |
-| **Fach**          | ITL1/ITL2 |
----
+## Installation
 
-## 📝 Projektbeschreibung
-
-Beschreibe hier ausführlich:
-- **Ziel der Applikation:** Was soll die App leisten?
-Des ist eine einfache Java-Anwendung, die die Konzepte der Vererbung demonstriert. Sie enthält eine Basisklasse `Person` und eine abgeleitete Klasse `Employee`, die zusätzliche Eigenschaften wie `employeeId`, `supervisorId` und `salary` hat. Die Anwendung erstellt ein `Employee`-Objekt, setzt dessen Eigenschaften und gibt alle Informationen auf der Konsole aus.
-
-- **Hauptfunktionen:** Was kann die App?
-Die App kann:
-  - Ein `Employee`-Objekt erstellen
-  - Die Eigenschaften des `Employee`-Objekts setzen (z. B. `supervisorId`, `salary`)
-  - Alle Informationen des `Employee`-Objekts auf der Konsole ausgeben
-
----
-
-## 📸 Screenshot
-
-> Füge hier einen Screenshot der laufenden Applikation ein.
-
-![Screenshot der App](./media/image.png)
-
-<!-- So fügst du einen Screenshot ein:
-     1. Screenshot erstellen und als "screenshot.png" im Projektordner speichern
-     2. Den Pfad oben anpassen, falls der Screenshot woanders liegt
-     Alternativ: mehrere Screenshots für verschiedene Ansichten -->
-
----
-
-## 🛠️ Entwicklungsumgebung
-
-### Verwendete Software & Tools
-
-| Tool / Software      | Version     | Zweck                          |
-|----------------------|-------------|--------------------------------|
-| VS Code             | —           | Code-Editor                    |
-| JDK                 | ab 25       | Kompilieren und Ausführen      |
-| Git                 | —           | Versionskontrolle              |
-
-
-### Betriebssystem (Entwicklung)
-
-- **OS:** Ubuntu 24.04 LTS
-
----
-
-## 🚀 Installation & Ausführung
-
-### Voraussetzungen
-
-- JDK 25 oder neuer installiert
-- Git zum Klonen des Repositorys
-
-### Schritte
+Klone das Repository oder lade es als ZIP herunter. Öffne das Hauptverzeichnis
+des Projekts im Terminal und kompiliere den Quellcode:
 
 ```bash
-# Im Projektordner kompilieren
 javac -d out src/Domain/Models/Person.java src/Domain/Models/Employee.java src/Main.java
+```
 
-# Programm starten
+> [!NOTE]
+> Das Projekt benötigt keine externen Bibliotheken.
+
+## Verwendung
+
+Starte das Programm im Hauptverzeichnis:
+
+```bash
 java -cp out Main
 ```
 
-> **Hinweis:** Keine externen Bibliotheken erforderlich.
+Das Programm erstellt einen Mitarbeiter mit festen Beispieldaten und gibt
+seine Daten auf der Konsole aus. Die Beispieldaten lassen sich in
+[`src/Main.java`](src/Main.java) ändern. Kompiliere das Programm nach einer
+Änderung erneut.
 
----
+## Projektstruktur
 
-## 🔗 Quellen
+| Datei | Aufgabe |
+|---|---|
+| [`Person.java`](src/Domain/Models/Person.java) | Basisklasse für gemeinsame Personendaten und Methoden |
+| [`Employee.java`](src/Domain/Models/Employee.java) | Leitet sich von `Person` ab und ergänzt mitarbeiterspezifische Daten und Methoden |
+| [`Main.java`](src/Main.java) | Erstellt das Beispielobjekt und gibt seine Daten aus |
 
-### Links & Dokumentation
+## Einschränkungen
 
-| Quelle | URL / Beschreibung |
-|--------|--------------------|
-| Offizielle Java-Dokumentation | https://docs.oracle.com/en/java/ |
+- Das Beispiel verwendet fest vorgegebene Daten und hat keine interaktive Eingabe.
+- Die Daten werden nicht dauerhaft gespeichert.
 
-### KI-Unterstützung
+## Hilfe und Mitwirken
 
-| Tool | Verwendeter Prompt / Zweck |
-|------|----------------------------|
-| OpenCode | Unterstützung bei der README |
+Fehler und Verbesserungsvorschläge können über den Tab **Issues** im
+GitHub-Repository gemeldet werden. Beschreibe bei einem Fehler den
+ausgeführten Befehl und füge die Konsolenausgabe hinzu.
 
----
+README-Änderungen erhalten eine Commit-Nachricht mit dem Präfix `docs:`,
+zum Beispiel `docs: README überarbeiten`.
 
-## ⚠️ Bekannte Probleme / Limitierungen
+## Projektinformationen
 
-- Keine dauerhafte Speicherung der Daten.
-- Nur feste Beispieldaten, keine interaktive Eingabe.
+| Feld | Inhalt |
+|---|---|
+| Autor | Auer Alexander |
+| Klasse | 2aAPC |
+| Schuljahr | 2026/27 |
+| Abgabedatum | 20.11.2026 |
+| Lehrer | Gerhard Jarz |
+| Fach | ITL1/ITL2 |
+| Entwicklungsumgebung | Ubuntu 24.04 LTS, VS Code, JDK 25 und Git |
 
----
+## Quellen
 
-## 📄 Lizenz
+- [Offizielle Java-Dokumentation](https://docs.oracle.com/en/java/)
+- OpenCode und ChatGPT zur Überarbeitung der README
 
-Dieses Projekt wurde im Rahmen des Schulunterrichts erstellt und ist nicht für die kommerzielle Nutzung vorgesehen.
+## Lizenz
+
+Dieses Projekt steht unter der [MIT-Lizenz](https://opensource.org/license/mit).
