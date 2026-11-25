@@ -17,7 +17,7 @@ public class Manager extends Employee {
         this.employees = employees;
     }
 
-    public void addEMployee(Employee employee) {
+    public void addEmployee(Employee employee) {
         if (employee == null)
             throw new IllegalArgumentException("Employee is null!");
 
@@ -25,6 +25,17 @@ public class Manager extends Employee {
             throw new IllegalStateException("Employees list is not initialized!");
 
         employees.add(employee);
+    }
+
+    public void removeEmployee(Employee employee) {
+        if (employee == null)
+            throw new IllegalArgumentException("Employee is null!");
+
+        if (!employees.contains(employee))
+            return;
+
+        employees.remove(employee);
+
     }
 
     @Override
