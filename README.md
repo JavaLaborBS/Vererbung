@@ -17,9 +17,11 @@ classDiagram
     class Person {
         -String name
         -String firstName
-        +int age
+        -int age
         +Person(String firstName, String lastName)
         +Person()
+        +getAge() int
+        +setAge(int age) void
         +setName(String firstName, String lastName) void
         +getFullName() String
     }
@@ -27,23 +29,37 @@ classDiagram
     class Employee {
         -String employeeId
         -String supervisorId
-        -long salary
+        -double salary
         +Employee(String lastName, String firstName, String empId, int age)
         +getEmployeeId() String
         +setSupervisorId(String supervisorId) void
         +getSupervisorId() String
-        +setSalary(long salary) void
-        +getSalary() long
+        +setSalary(double salary) void
+        +getSalary() double
         +printAll() void
-        +salaryIncrease(long amount) void
+        +salaryIncrease(double percentChange) void
+    }
+
+    class Manager {
+        -List~Employee~ employees
+        +Manager(String firstName, String lastName, String employeeId, int age)
+        +getEmployees() List~Employee~
+        +setEmployees(List~Employee~ employees) void
+        +addEmployee(Employee employee) void
+        +removeEmployee(Employee employee) void
+        +printAll() void
     }
 
     class Main {
-        +main(String[] args)$ void
+        +main(String[] args) void$
     }
 
     Person <|-- Employee
+    Employee <|-- Manager
+    Manager "0..*" --> "0..*" Employee : verwaltet
+    Main ..> Person : erstellt und verwendet
     Main ..> Employee : erstellt und verwendet
+    Main ..> Manager : erstellt und verwendet
 ```
 
 Ich bin nirgendst von den Vorgaben abgewichen. Ich habe die Klassen `Person` und `Employee` wie gefordert implementiert. Die Methoden `getFullName()` und `salaryIncrease(long amount)` sind ebenfalls enthalten.
