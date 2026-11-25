@@ -12,4 +12,12 @@ public class EmployeeTest {
         employee.salaryIncrease(10);
         assertEquals(20, employee.getSalary());
     }
+
+    @Test
+    void employeeCanBeUsedAsPerson() {
+        Person person = new Employee("Mustermann", "Max", "E150", 25);
+
+        assertEquals("Max Mustermann", person.getFullName());
+    }
+
 }
