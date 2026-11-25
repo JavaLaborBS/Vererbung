@@ -52,7 +52,12 @@ Ich bin nirgendst von den Vorgaben abgewichen. Ich habe die Klassen `Person` und
 
 Beschreibe die wichtigsten Entscheidungen in Stichworten. Zeige nur kurze Codeausschnitte, die du erklärst, nicht den gesamten Quelltext.
 
-![Programmausgabe](docs/ausgabe.png)
+Reflexionsfrage:
+Der "protected" access modifier erlaubt es, dass Unterklassen auf die Eigenschaften und Methoden der Oberklasse zugreifen können, auch wenn sie in einem anderen Paket sind. Dies ist sinnvoll, wenn man möchte, dass Unterklassen bestimmte Eigenschaften oder Methoden der Oberklasse nutzen können, ohne dass diese öffentlich zugänglich sind.
+
+"Private", hingegen, beschränkt den Zugriff auf die Klasse selbst. Dies ist sinnvoll, um die Kapselung zu gewährleisten und sicherzustellen, dass die Eigenschaften und Methoden nur innerhalb der Klasse verwendet werden können.
+
+![Programmausgabe](media/ausgabe.png)
 
 ## 4. Tests
 
