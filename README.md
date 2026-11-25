@@ -50,12 +50,9 @@ Ich bin nirgendst von den Vorgaben abgewichen. Ich habe die Klassen `Person` und
 
 ## 3. Umsetzung
 
-Beschreibe die wichtigsten Entscheidungen in Stichworten. Zeige nur kurze Codeausschnitte, die du erklärst, nicht den gesamten Quelltext.
+Angefangen habe ich mit der Klasse `Person`. Ich habe sämtliche Attribute eingebaut (wie im UML Diagramm vorgegeben). Die Employee Klasse habe ich dann von der Person Klasse abgeleitet. Ich habe die Konstruktoren und Methoden implementiert, die im UML Diagramm angegeben sind. Die Methode `salaryIncrease(double percentAmount)` erhöht das Gehalt des Mitarbeiters um die angegebenen Prozent.
 
-Reflexionsfrage:
-Der "protected" access modifier erlaubt es, dass Unterklassen auf die Eigenschaften und Methoden der Oberklasse zugreifen können, auch wenn sie in einem anderen Paket sind. Dies ist sinnvoll, wenn man möchte, dass Unterklassen bestimmte Eigenschaften oder Methoden der Oberklasse nutzen können, ohne dass diese öffentlich zugänglich sind.
-
-"Private", hingegen, beschränkt den Zugriff auf die Klasse selbst. Dies ist sinnvoll, um die Kapselung zu gewährleisten und sicherzustellen, dass die Eigenschaften und Methoden nur innerhalb der Klasse verwendet werden können.
+Zusätzlich habe ich die freiwillige Zusatzaufgabe Manager abgeschlossen. Ein Manager kann mehrere Mitarbeiter verwalten. Ich habe die Klasse `Manager` erstellt, die eine Liste von `Employee` Objekten enthält. Die Methoden `addEmployee(Employee employee)` und `removeEmployee(Employee employee)` ermöglichen das Hinzufügen und Entfernen von Mitarbeitern. Die Methode `printAllEmployees()` gibt alle Mitarbeiter des Managers aus.
 
 ![Programmausgabe](media/ausgabe.png)
 
@@ -63,23 +60,25 @@ Der "protected" access modifier erlaubt es, dass Unterklassen auf die Eigenschaf
 
 | Test | Erwartung | Ergebnis |
 |---|---|---|
-| `fullName()` | | |
-| `salaryIncrease(10)` | | |
-| negatives Alter | | |
-| `Person p = new Employee(...)` | | |
+| `fullName()` | Max Mustermann | Max Mustermann |
+| `salaryIncrease(10)` | 11 | 11 |
+| Negatives Alter (`setAge(-10)`) | Wirft `IllegalArgumentException` | Wirft `IllegalArgumentException` |
+| `Person p = new Employee(...)` | Die Zuweisung funktioniert und `p.getFullName()` liefert „Max Mustermann“ | Die Zuweisung funktioniert und `p.getFullName()` liefert „Max Mustermann“ |
 
 ## 5. Reflexion
 
 1. Warum sind die Eigenschaften `private`?
+Man nennt das Encapsulation. Es schützt die Eigenschaften vor unkontrolliertem Zugriff von außen. Stattdessen werden Getter- und Setter-Methoden verwendet, um den Zugriff zu kontrollieren und Validierungen durchzuführen.
 2. Wann ist `protected` sinnvoll?
+Protected erlaubt Child Classes den Zugriff von Attributen der Parent Klasse. Es ist sinnvoll, wenn man möchte, dass Unterklassen auf bestimmte Eigenschaften oder Methoden der Oberklasse zugreifen können, während sie für andere Klassen verborgen bleiben.
 3. Was passiert ohne `super(...)`?
+Attribute die im Konstruktor der Parent Class gesetzt werden bleiben leer (null). Die Parent Class wird nicht initialisiert und es kann zu unerwartetem Verhalten kommen.
 
 ## 6. Probleme und Lösungen
 
-| Problem | Lösung |
-|---|---|
-| | |
+Keine Probleme.
 
 ## 7. Quellen und Hilfsmittel
 
-Nenne Webseiten, Mitschüler und KI-Werkzeuge, die du genutzt hast, und wofür.
+Programmierung: Vorerfahrung aus der 1. Klasse und C# + Java Tutorials auf YouTube
+Readme und Dokumentation: Selbst geschrieben und mit ChatGPT überprüft und verfeinern lassen
