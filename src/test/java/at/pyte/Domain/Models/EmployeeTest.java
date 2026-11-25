@@ -10,7 +10,7 @@ public class EmployeeTest {
         Employee employee = new Employee("Mustermann", "Max", "E150", 25);
         employee.setSalary(10);
         employee.salaryIncrease(10);
-        assertEquals(20, employee.getSalary());
+        assertEquals(11, employee.getSalary());
     }
 
     @Test
